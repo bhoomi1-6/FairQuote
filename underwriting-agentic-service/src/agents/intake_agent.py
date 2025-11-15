@@ -1,7 +1,9 @@
-from strands import Agent, tool, message
+from strands import Agent
+from src.config.init_model import bedrock_model
 
 class IntakeAgent(Agent):
 
+    model = bedrock_model
     name = "intake_agent"
     description = "Conversational front door: collects user data, validates, enriches via tools"
 
@@ -19,9 +21,5 @@ class IntakeAgent(Agent):
     Rules:
     - Use function calling whenever data is requested from tools.
     - Ask only 1 question at a time.
-    - When input is complete, emit event: `intake.completed`.
+    - When input is complete, output a structured JSON of the user profile.
     """
-
-    @message(trigger="intake.completed")
-    def send_payload(self, intake_data):
-        self.emit("pricing.requested", intake_data)

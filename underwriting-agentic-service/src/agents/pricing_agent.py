@@ -1,7 +1,9 @@
-from strands import Agent, tool, message
+from strands import Agent
+from src.config.init_model import bedrock_model
 
 class PricingAgent(Agent):
 
+    model = bedrock_model
     name = "pricing_agent"
     description = "Computes risk score + premium; generates natural language explanation."
 
@@ -27,9 +29,5 @@ class PricingAgent(Agent):
           "breakdown": ...,
           "recommendations": ...
         }
-    6. Emit event `pricing.completed`
+    6. Return the pricing result.
     """
-
-    @message(trigger="pricing.requested")
-    def compute_price(self, intake_data):
-        self.emit("pricing.completed", intake_data)

@@ -1,7 +1,9 @@
-from strands import Agent, tool, message
+from strands import Agent
+from src.config.init_model import bedrock_model
 
 class PolicyAgent(Agent):
 
+    model = bedrock_model
     name = "policy_generator"
     description = "Assembles policy document via RAG + templates."
 
@@ -20,7 +22,3 @@ class PolicyAgent(Agent):
         - Conditions
     - Output PDF-ready markdown
     """
-
-    @message(trigger="pricing.completed")
-    def generate_policy(self, pricing_payload):
-        self.emit("policy.completed", pricing_payload)
