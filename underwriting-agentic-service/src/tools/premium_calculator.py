@@ -1,7 +1,7 @@
 # premium_calculator.py
 
 from typing import Dict, Any
-from risk_formula import risk_rule_engine_tool
+from .risk_formula import risk_rule_engine_tool
 
 
 try:

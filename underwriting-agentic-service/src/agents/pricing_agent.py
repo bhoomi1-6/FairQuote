@@ -5,9 +5,9 @@ class PricingAgent(Agent):
 
     model = bedrock_model
     name = "pricing_agent"
-    description = "Computes risk score + premium; generates natural language explanation."
+    system_prompt= "Computes risk score + premium; generates natural language explanation."
 
-    tools = ["risk_model", "premium_calculator", "rag_explainer"]
+    tools = ["risk_rule_engine_tool", "premium_calculator_tool", "rag_explainer"]
 
     instructions = """
     You compute:

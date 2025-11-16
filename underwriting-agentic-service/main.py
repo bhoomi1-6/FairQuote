@@ -6,13 +6,15 @@ from typing import Optional, Dict, List
 import uuid
 from dotenv import load_dotenv
 load_dotenv()
-from src.agents.intake_agent import IntakeAgent
+from src.agents.orchestrator import OrchestratorAgent
 from src.utils.document_extraction import extract_document
 from strands.session.file_session_manager import FileSessionManager
 from datetime import datetime
 from bedrock_agentcore.memory.integrations.strands.config import AgentCoreMemoryConfig
 from bedrock_agentcore.memory.integrations.strands.session_manager import AgentCoreMemorySessionManager
 import json
+
+from src.config.init_model import bedrock_model
 
 import os
 
@@ -28,7 +30,7 @@ app.add_middleware(
 )
 
 # In-memory session storage (use Redis in production)
-sessions: Dict[str, IntakeAgent] = {}
+sessions: Dict[str, OrchestratorAgent] = {}
 
 # ----------------------------
 # MODELS
@@ -53,20 +55,10 @@ class SessionResponse(BaseModel):
 # ----------------------------
 # HELPER FUNCTIONS
 # ----------------------------
-async def get_or_create_agent(session_id: str) -> IntakeAgent:
+async def get_or_create_agent(session_id: str) -> OrchestratorAgent:
     """Get existing agent or create new one with session manager and first user message."""
-    actor_id = f"actor_{datetime.now().strftime('%Y%m%d%H%M%S')}"
-    memory_session_id = f"session_{datetime.now().strftime('%Y%m%d%H%M%S')}"
-    agentcore_memory_config = AgentCoreMemoryConfig(
-    memory_id= os.getenv("MEM_ID"),
-    session_id=memory_session_id,
-    actor_id=actor_id
-    )
-    session_manager = AgentCoreMemorySessionManager(
-    agentcore_memory_config=agentcore_memory_config,
-    region_name="us-east-1")
     if session_id not in sessions:
-        agent = IntakeAgent(session_manager=session_manager)
+        agent = OrchestratorAgent()
         sessions[session_id] = agent
     return sessions[session_id]
 
@@ -104,7 +96,7 @@ async def get_session_status(session_id: str):
     return {
         "session_id": session_id,
         "exists": True,
-        "agent_name": getattr(agent, "name", "IntakeAgent"),
+        "agent_name": getattr(agent, "name", "OrchestratorAgent"),
         "tools_count": len(getattr(agent, "tools", []))
     }
 
@@ -167,12 +159,15 @@ async def chat_with_upload(
         # Step 4: Get or create agent
         agent_intake = await get_or_create_agent(session_id)
 
-        # Step 5: Invoke the IntakeAgent with the user message
+        # Step 5: Invoke the OrchestratorAgent with the user message
+        payload = f"""
+        User message:
+        {message}
 
-        print(f"{type(extracted_data_str)} {type(message)}")
-        message = {"text": message}
-        extracted_data = {"text": extracted_data_str}
-        result = await agent_intake.invoke_async([message, extracted_data])
+        Extracted document data (JSON):
+        {extracted_data_str}
+        """
+        result = await agent_intake.invoke_async(payload)
 
         # Step 6: Prepare response
         response_text = getattr(result, "final_message", str(result))
