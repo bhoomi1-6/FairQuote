@@ -1,0 +1,201 @@
+driver_id,age,occupation,postcode,claim_history,driving_history_points,driving_history_accidents,income,annual_mileage,car_usage,car_id,risk_score,make,model,year,engine_size,fuel_type,transmission,insurance_grade,car_value_estimate
+DRV001,39,Construction Worker,RG1,0,1,1,medium,12031,commute,CAR001,0.4207,Tesla,Model S,2016,0.0,electric,manual,21,5364
+DRV002,62,Fast Food Worker,S14,0,1,0,medium,13015,commute,CAR002,0.4831,Toyota,Camry,2012,2.5,diesel,manual,20,2576
+DRV003,46,IT Manager,S15,0,0,1,high,12458,commute,CAR003,0.2044,Nissan,Leaf,2009,0.0,electric,manual,13,1500
+DRV004,35,Software Developer,RG4,0,0,0,low,9952,social,CAR004,0.3269,Mercedes,C-Class,2021,2.0,petrol,manual,26,16468
+DRV005,18,Taxi Driver,AL8,0,0,1,low,6948,social,CAR005,0.5964,Toyota,Yaris,2008,1.0,diesel,manual,7,1500
+DRV006,18,Accountant,S20,1,0,1,medium,12906,commute,CAR006,0.7245,Toyota,Yaris,2012,1.0,electric,manual,6,1500
+DRV007,45,Fast Food Worker,GU7,0,5,1,high,15691,commute,CAR007,0.5073,Tesla,Model 3,2015,0.0,electric,manual,17,3225
+DRV008,49,Graphic Designer,AL6,1,1,0,low,7061,social,CAR008,0.4475,Nissan,Qashqai,2015,1.3,electric,automatic,9,3910
+DRV009,35,Fast Food Worker,RG2,0,0,0,low,15094,commute,CAR009,0.3545,Honda,Accord,2020,2.0,diesel,automatic,19,6756
+DRV010,39,Delivery Driver,S11,2,3,2,medium,12755,commute,CAR010,0.802,Ford,Mustang,2016,2.3,electric,manual,21,3111
+DRV011,32,Fast Food Worker,RG5,0,0,1,medium,13557,commute,CAR011,0.2312,Hyundai,i10,2017,1.0,hybrid,automatic,3,3420
+DRV012,21,Scientist,S7,0,1,0,medium,9070,social,CAR012,0.5782,Nissan,Leaf,2018,0.0,electric,manual,12,5094
+DRV013,40,Bartender,S12,0,3,0,medium,6503,social,CAR013,0.5245,Ford,Mustang,2019,2.3,hybrid,automatic,23,6132
+DRV014,38,IT Manager,S3,0,4,0,low,10306,social,CAR014,0.4557,Toyota,Yaris,2012,1.0,petrol,manual,8,1500
+DRV015,44,IT Manager,S19,0,0,0,low,15421,commute,CAR015,0.3713,Toyota,Corolla,2010,1.8,hybrid,manual,13,1500
+DRV016,18,Engineer,S11,0,4,0,low,15610,commute,CAR016,0.8463,Hyundai,i10,2010,1.0,petrol,automatic,5,2015
+DRV017,53,Graphic Designer,M14,0,1,1,medium,12185,commute,CAR017,0.665,Mercedes,E-Class,2021,3.0,hybrid,manual,41,17974
+DRV018,36,Taxi Driver,S6,0,1,1,medium,20389,commercial,CAR018,0.6852,BMW,5 Series,2018,3.0,diesel,automatic,44,11411
+DRV019,18,Delivery Driver,AL8,0,0,0,medium,11777,commute,CAR019,0.5424,Kia,Picanto,2009,1.0,petrol,manual,7,1500
+DRV020,24,Accountant,S4,0,4,0,medium,13219,commute,CAR020,0.6467,Nissan,Leaf,2020,0.0,electric,manual,12,6700
+DRV021,26,Graphic Designer,S12,0,0,0,high,19512,commercial,CAR021,0.3282,Mercedes,A-Class,2015,1.3,hybrid,manual,19,8128
+DRV022,28,Teacher,S9,0,0,0,medium,16322,commercial,CAR022,0.4198,BMW,3 Series,2013,2.0,petrol,manual,26,5222
+DRV023,30,Engineer,S15,0,2,0,medium,9005,commute,CAR023,0.3756,Volkswagen,Golf,2024,1.4,hybrid,automatic,10,12924
+DRV024,42,Delivery Driver,S14,0,4,1,low,15011,commute,CAR024,0.6882,Ford,Mustang,2024,2.3,diesel,automatic,20,14305
+DRV025,35,Teacher,GU7,0,2,0,high,11447,commute,CAR025,0.3922,Tesla,Model S,2010,0.0,electric,automatic,21,1551
+DRV026,30,Customer Service,S12,0,1,0,low,8929,commute,CAR026,0.6454,Mercedes,E-Class,2014,3.0,diesel,automatic,40,4757
+DRV027,55,Software Developer,S12,0,0,1,low,11377,commute,CAR027,0.2879,Toyota,Corolla,2023,1.8,hybrid,automatic,16,10482
+DRV028,37,Fast Food Worker,S12,0,0,0,medium,14421,commute,CAR028,0.3884,Mercedes,A-Class,2019,1.3,hybrid,manual,15,10610
+DRV029,19,Graphic Designer,GU4,0,0,0,medium,12508,commute,CAR029,0.5508,Audi,A3,2012,1.6,electric,manual,19,4092
+DRV030,25,Teacher,S1,0,0,1,high,16036,commercial,CAR030,0.2677,Hyundai,i10,2021,1.0,petrol,manual,8,8227
+DRV031,55,Taxi Driver,RG1,0,1,0,low,20644,commercial,CAR031,0.4675,Honda,Jazz,2022,1.3,electric,manual,10,9660
+DRV032,63,Engineer,S7,0,0,0,high,21043,commercial,CAR032,0.3146,Mercedes,A-Class,2011,1.3,electric,automatic,18,2584
+DRV033,27,Warehouse Worker,S3,0,1,0,low,5234,social,CAR033,0.3848,Hyundai,i10,2023,1.0,petrol,manual,8,9197
+DRV034,37,Construction Worker,GU7,0,0,0,low,8254,social,CAR034,0.3249,Hyundai,Tucson,2010,1.6,hybrid,automatic,12,2277
+DRV035,29,Scientist,GU3,0,0,0,low,10782,commute,CAR035,0.2436,BMW,1 Series,2015,1.5,electric,manual,17,6850
+DRV036,18,IT Manager,S19,1,0,1,high,13711,commute,CAR036,0.6489,Ford,Fiesta,2020,1.1,hybrid,manual,7,6380
+DRV037,39,Warehouse Worker,S15,0,0,1,low,8547,social,CAR037,0.2926,Kia,Picanto,2023,1.0,petrol,automatic,8,9573
+DRV038,38,Scientist,S9,0,0,1,low,9502,social,CAR038,0.3843,Audi,A3,2021,1.6,diesel,manual,21,15599
+DRV039,30,Bartender,GU7,0,1,0,medium,9494,commute,CAR039,0.3184,Volkswagen,Polo,2022,1.0,diesel,manual,8,9487
+DRV040,39,Scientist,GU4,0,1,0,medium,6191,social,CAR040,0.3392,BMW,3 Series,2018,2.0,electric,manual,26,9887
+DRV041,67,Construction Worker,S15,0,0,0,low,7972,commute,CAR041,0.3754,Kia,Picanto,2018,1.0,hybrid,automatic,4,4297
+DRV042,48,IT Manager,S2,0,2,1,high,10557,commute,CAR042,0.2946,Ford,Focus,2011,1.5,diesel,manual,7,1595
+DRV043,29,Delivery Driver,RG8,0,0,1,medium,12867,social,CAR043,0.2593,Nissan,Leaf,2009,0.0,electric,manual,13,1500
+DRV044,41,Customer Service,GU2,1,0,1,low,6792,social,CAR044,0.3338,Volkswagen,Polo,2018,1.0,diesel,manual,9,5161
+DRV045,49,Taxi Driver,GU7,0,3,0,high,18763,commercial,CAR045,0.3928,Audi,A1,2023,1.0,diesel,automatic,14,19079
+DRV046,33,Nurse,S20,0,2,0,high,11202,commute,CAR046,0.3225,Hyundai,i10,2022,1.0,electric,manual,7,7647
+DRV047,46,Graphic Designer,S1,0,3,0,medium,17021,commercial,CAR047,0.4298,Volkswagen,Polo,2013,1.0,diesel,automatic,7,1750
+DRV048,29,Engineer,S1,0,2,0,high,3539,social,CAR048,0.2522,Nissan,Micra,2012,1.0,hybrid,automatic,7,1500
+DRV049,40,Taxi Driver,S14,0,1,1,medium,17342,commercial,CAR049,0.6528,Mercedes,E-Class,2024,3.0,petrol,manual,40,31001
+DRV050,27,Accountant,B15,1,0,0,medium,12717,commute,CAR050,0.5647,Ford,Mustang,2023,2.3,hybrid,manual,23,12486
+DRV051,42,Teacher,S18,0,4,1,medium,15118,commute,CAR051,0.6047,Audi,A4,2022,2.0,diesel,manual,26,19521
+DRV052,31,IT Manager,S11,0,2,0,medium,9875,commute,CAR052,0.365,Ford,Mustang,2023,2.3,petrol,manual,19,11700
+DRV053,53,Bartender,S14,0,0,1,low,13005,commute,CAR053,0.3806,Hyundai,Tucson,2015,1.6,petrol,automatic,12,2944
+DRV054,34,Accountant,S14,0,0,0,low,9553,commute,CAR054,0.3544,Audi,A3,2017,1.6,diesel,automatic,24,7880
+DRV055,47,Nurse,AL8,0,2,0,low,20920,commercial,CAR055,0.4414,Audi,A1,2022,1.0,diesel,manual,15,14457
+DRV056,28,Customer Service,GU6,0,5,0,low,8888,commute,CAR056,0.419,Kia,Picanto,2013,1.0,electric,manual,6,2324
+DRV057,27,Bartender,S11,1,1,0,medium,6188,commute,CAR057,0.532,Volkswagen,Golf,2011,1.4,electric,manual,8,1903
+DRV058,34,Delivery Driver,AL7,0,5,0,medium,12117,commute,CAR058,0.484,Honda,Civic,2015,1.5,electric,automatic,10,3017
+DRV059,42,Software Developer,GU2,0,0,0,high,18671,commercial,CAR059,0.3847,Mercedes,C-Class,2018,2.0,electric,manual,31,8862
+DRV060,22,IT Manager,AL3,0,5,1,low,11773,social,CAR060,0.6364,Tesla,Model S,2024,0.0,electric,manual,19,24073
+DRV061,26,Nurse,S5,1,0,1,low,11685,commute,CAR061,0.5253,Nissan,Leaf,2024,0.0,electric,manual,10,12225
+DRV062,37,Accountant,RG2,0,0,0,high,10188,social,CAR062,0.1142,Toyota,Yaris,2015,1.0,diesel,automatic,4,1500
+DRV063,48,Software Developer,M14,0,0,0,medium,10542,commute,CAR063,0.4219,Mercedes,C-Class,2015,2.0,diesel,automatic,29,5988
+DRV064,46,Construction Worker,S1,0,0,1,low,8146,social,CAR064,0.3905,Toyota,Corolla,2018,1.8,petrol,automatic,16,4783
+DRV065,20,Construction Worker,GU3,0,0,0,high,11348,commute,CAR065,0.5401,Honda,Civic,2009,1.5,petrol,manual,7,1570
+DRV066,18,Fast Food Worker,GU5,1,1,0,low,7891,social,CAR066,0.8389,Kia,Picanto,2014,1.0,diesel,manual,6,2202
+DRV067,34,Accountant,S8,0,10,0,high,5786,social,CAR067,0.5981,Audi,A1,2012,1.0,electric,manual,13,3536
+DRV068,29,Taxi Driver,S3,0,0,1,high,18447,commercial,CAR068,0.3935,Hyundai,Tucson,2014,1.6,petrol,manual,15,2671
+DRV069,30,Teacher,AL7,0,1,0,high,10632,commute,CAR069,0.2574,Ford,Fiesta,2021,1.1,electric,automatic,6,7731
+DRV070,52,Delivery Driver,S7,0,0,0,low,5351,commute,CAR070,0.3949,BMW,1 Series,2021,1.5,electric,automatic,15,16278
+DRV071,33,Fast Food Worker,S19,0,6,0,high,16885,commercial,CAR071,0.4965,Toyota,Yaris,2016,1.0,hybrid,manual,3,4459
+DRV072,46,Bartender,S14,0,0,0,medium,14020,commercial,CAR072,0.3497,Tesla,Model 3,2019,0.0,electric,automatic,16,11296
+DRV073,47,Graphic Designer,S5,0,0,0,low,10543,social,CAR073,0.3246,Ford,Focus,2010,1.5,electric,manual,7,1500
+DRV074,38,Fast Food Worker,RG2,0,2,0,low,11674,commute,CAR074,0.4022,Audi,A3,2013,1.6,petrol,manual,19,5005
+DRV075,34,Customer Service,S2,0,4,1,low,11062,commute,CAR075,0.5533,Tesla,Model Y,2009,0.0,electric,manual,19,3370
+DRV076,55,Nurse,RG3,0,0,1,medium,14978,commercial,CAR076,0.2251,Honda,Civic,2008,1.5,diesel,manual,11,1708
+DRV077,40,Engineer,RG8,0,4,1,high,5497,social,CAR077,0.41,Ford,Mustang,2018,2.3,electric,automatic,21,5648
+DRV078,23,Graphic Designer,S11,0,1,0,high,9959,commute,CAR078,0.5122,Toyota,Yaris,2012,1.0,hybrid,manual,5,1500
+DRV079,22,Customer Service,S14,0,0,0,low,16386,commute,CAR079,0.6389,Mercedes,A-Class,2021,1.3,diesel,automatic,17,16156
+DRV080,47,Nurse,S18,0,0,0,high,11922,commute,CAR080,0.3439,BMW,3 Series,2011,2.0,petrol,manual,29,2954
+DRV081,40,Bartender,AL7,0,0,0,high,4579,social,CAR081,0.1955,Tesla,Model Y,2016,0.0,electric,manual,20,5968
+DRV082,22,Bartender,RG1,0,0,1,medium,12252,commute,CAR082,0.4372,Toyota,Yaris,2020,1.0,hybrid,manual,5,6834
+DRV083,39,Bartender,AL8,0,1,1,medium,9554,commute,CAR083,0.3998,Hyundai,Tucson,2022,1.6,petrol,manual,14,10917
+DRV084,31,Warehouse Worker,S5,0,0,1,low,19580,commercial,CAR084,0.3997,BMW,1 Series,2014,1.5,diesel,automatic,18,7051
+DRV085,39,Construction Worker,GU3,0,2,0,medium,14456,commute,CAR085,0.409,Nissan,Qashqai,2010,1.3,hybrid,manual,12,1500
+DRV086,35,Construction Worker,S18,0,1,0,medium,14016,commute,CAR086,0.552,Volkswagen,Passat,2016,2.0,hybrid,manual,21,4426
+DRV087,42,Construction Worker,M5,0,1,0,medium,10185,commute,CAR087,0.6194,Toyota,Camry,2021,2.5,petrol,manual,24,10516
+DRV088,20,Construction Worker,S7,0,2,0,low,10003,commute,CAR088,0.9068,Audi,A4,2010,2.0,diesel,automatic,28,3594
+DRV089,26,Taxi Driver,S15,0,5,1,medium,18580,commute,CAR089,0.5865,Tesla,Model Y,2012,0.0,electric,automatic,17,3445
+DRV090,43,Warehouse Worker,S5,0,1,0,medium,4961,social,CAR090,0.3445,Nissan,Micra,2008,1.0,hybrid,automatic,5,1586
+DRV091,49,Software Developer,S16,0,0,1,medium,15890,commercial,CAR091,0.2836,Hyundai,Tucson,2011,1.6,petrol,manual,17,1784
+DRV092,58,Customer Service,GU6,0,0,1,medium,11881,commute,CAR092,0.3627,Mercedes,C-Class,2021,2.0,hybrid,manual,26,14686
+DRV093,43,Customer Service,S1,0,1,0,low,9945,social,CAR093,0.5039,BMW,3 Series,2020,2.0,diesel,automatic,27,13898
+DRV094,22,Fast Food Worker,S20,0,4,1,medium,7547,social,CAR094,0.7229,Nissan,Leaf,2014,0.0,electric,automatic,13,1646
+DRV095,43,Graphic Designer,S16,0,4,0,medium,10161,social,CAR095,0.426,Ford,Fiesta,2015,1.1,petrol,manual,8,3765
+DRV096,20,Engineer,S2,2,2,2,medium,17826,commercial,CAR096,1.0,Hyundai,Tucson,2023,1.6,diesel,manual,14,12574
+DRV097,39,IT Manager,S5,1,2,0,medium,8808,commute,CAR097,0.5003,Tesla,Model 3,2020,0.0,electric,automatic,17,11285
+DRV098,36,Customer Service,S11,0,3,0,medium,13703,commute,CAR098,0.3388,Ford,Focus,2016,1.5,hybrid,automatic,7,3822
+DRV099,21,Fast Food Worker,S10,0,0,1,low,19503,commercial,CAR099,0.634,Hyundai,Tucson,2014,1.6,hybrid,manual,17,3380
+DRV100,50,IT Manager,S1,0,0,0,medium,6210,social,CAR100,0.2224,Toyota,Corolla,2020,1.8,petrol,automatic,16,6907
+DRV101,29,Construction Worker,S18,0,4,0,medium,10087,social,CAR101,0.5498,Hyundai,Tucson,2022,1.6,electric,manual,13,12013
+DRV102,37,Taxi Driver,S11,1,10,0,high,21196,commercial,CAR102,0.8654,Hyundai,i10,2018,1.0,diesel,manual,6,4691
+DRV103,31,Scientist,RG8,0,1,1,high,10818,social,CAR103,0.1811,Ford,Fiesta,2013,1.1,diesel,automatic,6,1505
+DRV104,18,Graphic Designer,S16,0,0,0,low,7603,commute,CAR104,0.6408,Volkswagen,Golf,2008,1.4,diesel,automatic,9,1728
+DRV105,22,Nurse,GU6,0,0,0,medium,6162,social,CAR105,0.3444,Volkswagen,Golf,2020,1.4,petrol,automatic,8,6556
+DRV106,18,Accountant,S12,0,0,1,medium,5585,social,CAR106,0.5273,Hyundai,i10,2024,1.0,electric,manual,4,12832
+DRV107,47,Software Developer,RG1,1,1,0,low,17358,commercial,CAR107,0.6198,Volkswagen,Passat,2024,2.0,electric,automatic,22,12388
+DRV108,38,Fast Food Worker,M8,0,1,0,low,8984,social,CAR108,0.6353,Volkswagen,Passat,2016,2.0,diesel,manual,20,4095
+DRV109,31,Nurse,M3,0,3,0,high,6802,social,CAR109,0.384,Nissan,Micra,2023,1.0,diesel,automatic,5,9663
+DRV110,52,Construction Worker,RG9,0,0,1,high,10573,commute,CAR110,0.3218,Toyota,Camry,2019,2.5,petrol,automatic,21,6830
+DRV111,29,Teacher,S12,0,1,0,low,10240,commute,CAR111,0.4733,Tesla,Model S,2024,0.0,electric,automatic,16,23454
+DRV112,30,Accountant,AL5,1,4,1,medium,16836,commercial,CAR112,0.5593,Honda,Civic,2010,1.5,hybrid,manual,11,2808
+DRV113,44,Accountant,S20,0,0,0,medium,17025,commute,CAR113,0.3897,Toyota,Camry,2020,2.5,petrol,manual,23,9365
+DRV114,46,Customer Service,S20,0,0,0,medium,9623,commute,CAR114,0.3807,Mercedes,C-Class,2021,2.0,hybrid,automatic,29,15701
+DRV115,31,Nurse,S12,0,1,0,low,8447,social,CAR115,0.4592,Tesla,Model Y,2021,0.0,electric,automatic,20,13326
+DRV116,50,Software Developer,S8,0,2,0,low,19029,commercial,CAR116,0.3733,Toyota,Yaris,2015,1.0,hybrid,manual,8,3940
+DRV117,43,Bartender,S8,0,2,1,low,11101,commute,CAR117,0.5653,Mercedes,C-Class,2022,2.0,petrol,manual,28,18667
+DRV118,41,Nurse,S2,0,2,1,medium,13787,commute,CAR118,0.4578,Mercedes,C-Class,2024,2.0,petrol,automatic,30,25705
+DRV119,52,Warehouse Worker,RG5,0,4,1,medium,9297,social,CAR119,0.5184,BMW,3 Series,2018,2.0,petrol,automatic,30,10767
+DRV120,32,Taxi Driver,S11,0,0,1,medium,9916,commute,CAR120,0.3576,BMW,1 Series,2020,1.5,electric,automatic,17,13317
+DRV121,37,Taxi Driver,GU7,0,0,0,medium,10556,social,CAR121,0.2326,Nissan,Qashqai,2021,1.3,hybrid,manual,8,8537
+DRV122,37,Teacher,S8,0,1,0,medium,18269,commercial,CAR122,0.5103,Mercedes,C-Class,2015,2.0,electric,manual,30,6047
+DRV123,33,Graphic Designer,S14,0,1,1,medium,12547,commute,CAR123,0.4062,Tesla,Model 3,2016,0.0,electric,automatic,20,6385
+DRV124,50,Taxi Driver,S6,1,5,1,medium,8396,commute,CAR124,0.7737,Volkswagen,Passat,2009,2.0,petrol,automatic,22,1500
+DRV125,34,Fast Food Worker,RG9,0,0,0,low,7190,social,CAR125,0.2146,Toyota,Yaris,2018,1.0,electric,automatic,6,3185
+DRV126,50,Software Developer,S2,0,4,1,medium,13430,commercial,CAR126,0.621,Mercedes,E-Class,2019,3.0,electric,manual,43,13863
+DRV127,41,Engineer,AL6,0,0,0,medium,10685,commute,CAR127,0.1562,Audi,A1,2009,1.0,diesel,manual,12,1500
+DRV128,54,Fast Food Worker,S5,0,0,0,medium,7868,social,CAR128,0.3393,Audi,A3,2018,1.6,hybrid,manual,20,9349
+DRV129,23,Construction Worker,AL6,1,0,0,medium,11555,commute,CAR129,0.5738,Nissan,Micra,2022,1.0,hybrid,manual,4,9283
+DRV130,49,Graphic Designer,S14,0,6,0,high,10621,social,CAR130,0.4881,Honda,Accord,2010,2.0,petrol,manual,20,1500
+DRV131,44,Graphic Designer,S9,0,1,0,high,11752,commute,CAR131,0.3764,Audi,A1,2009,1.0,petrol,automatic,13,3916
+DRV132,46,Customer Service,S12,0,0,0,low,11483,commute,CAR132,0.3334,Hyundai,Tucson,2020,1.6,diesel,automatic,15,8574
+DRV133,23,Warehouse Worker,S1,1,6,0,medium,15609,commute,CAR133,0.9021,Mercedes,A-Class,2021,1.3,diesel,manual,19,15672
+DRV134,40,Fast Food Worker,S1,0,3,1,high,19370,commercial,CAR134,0.4869,Nissan,Qashqai,2015,1.3,petrol,manual,10,3503
+DRV135,26,Warehouse Worker,S11,0,5,0,medium,18969,commercial,CAR135,0.5743,Toyota,Corolla,2022,1.8,diesel,automatic,12,9470
+DRV136,36,Delivery Driver,S14,0,0,1,high,10880,social,CAR136,0.3893,Audi,A4,2010,2.0,diesel,manual,29,1500
+DRV137,22,Customer Service,S15,0,0,0,high,11209,commute,CAR137,0.5687,Honda,Accord,2008,2.0,electric,automatic,22,1500
+DRV138,46,IT Manager,S9,0,1,0,medium,10368,commute,CAR138,0.3404,Tesla,Model Y,2012,0.0,electric,automatic,17,4593
+DRV139,35,Bartender,RG5,0,1,0,high,10279,commute,CAR139,0.3566,Nissan,Leaf,2012,0.0,electric,automatic,11,1995
+DRV140,45,Nurse,S10,0,0,0,low,13063,commute,CAR140,0.2903,Volkswagen,Polo,2021,1.0,diesel,automatic,8,5757
+DRV141,34,Graphic Designer,B13,1,1,0,medium,10991,commute,CAR141,0.6498,Audi,A1,2020,1.0,diesel,automatic,13,12281
+DRV142,42,Warehouse Worker,RG3,0,0,0,low,11563,social,CAR142,0.3594,Ford,Mustang,2020,2.3,hybrid,manual,21,8420
+DRV143,34,Scientist,S20,0,0,0,low,10295,commute,CAR143,0.3898,BMW,3 Series,2017,2.0,hybrid,manual,27,7590
+DRV144,39,Scientist,S10,0,3,0,high,5874,social,CAR144,0.3635,Honda,Accord,2022,2.0,diesel,automatic,24,8802
+DRV145,52,Graphic Designer,RG5,0,5,0,low,9849,social,CAR145,0.5586,Honda,Accord,2008,2.0,diesel,manual,22,1500
+DRV146,56,Nurse,GU4,0,2,1,medium,8715,social,CAR146,0.4643,Mercedes,C-Class,2010,2.0,hybrid,automatic,29,4118
+DRV147,48,Software Developer,AL3,0,4,0,low,6929,social,CAR147,0.4005,Ford,Focus,2018,1.5,diesel,automatic,10,4093
+DRV148,34,Delivery Driver,S10,0,1,1,low,15293,commute,CAR148,0.5869,Hyundai,Tucson,2017,1.6,petrol,automatic,15,4275
+DRV149,29,Customer Service,S4,0,0,1,high,10790,commute,CAR149,0.2077,Ford,Fiesta,2017,1.1,hybrid,automatic,6,5594
+DRV150,25,Accountant,S2,0,2,0,medium,6941,social,CAR150,0.293,Hyundai,i10,2009,1.0,electric,manual,6,2127
+DRV151,56,Delivery Driver,RG2,0,10,1,high,8872,social,CAR151,0.7058,Toyota,Corolla,2016,1.8,hybrid,automatic,15,3752
+DRV152,24,Construction Worker,S4,0,0,0,high,9128,social,CAR152,0.4885,Ford,Fiesta,2023,1.1,electric,automatic,8,13438
+DRV153,34,Construction Worker,RG8,0,2,1,low,7828,commute,CAR153,0.3532,Nissan,Micra,2020,1.0,electric,manual,6,6227
+DRV154,18,Customer Service,S20,0,8,0,medium,6196,social,CAR154,0.954,Kia,Picanto,2019,1.0,diesel,manual,6,5479
+DRV155,39,Bartender,S8,0,2,0,high,14617,commute,CAR155,0.5201,Tesla,Model 3,2024,0.0,electric,manual,21,21432
+DRV156,19,Nurse,RG3,0,5,0,medium,10568,commute,CAR156,0.8662,Mercedes,C-Class,2020,2.0,diesel,automatic,27,14335
+DRV157,53,Accountant,S11,0,0,1,medium,22140,commercial,CAR157,0.269,Ford,Focus,2017,1.5,hybrid,automatic,9,4909
+DRV158,40,Accountant,S20,0,0,1,high,11271,commute,CAR158,0.1688,Toyota,Yaris,2016,1.0,electric,automatic,5,3392
+DRV159,45,Nurse,S18,0,1,0,low,2302,social,CAR159,0.3911,Volkswagen,Polo,2024,1.0,electric,automatic,7,11085
+DRV160,41,Fast Food Worker,S1,0,2,0,low,11782,commute,CAR160,0.5108,Toyota,Camry,2015,2.5,petrol,automatic,19,3946
+DRV161,31,IT Manager,S12,1,0,0,high,12866,commute,CAR161,0.3771,Nissan,Leaf,2023,0.0,electric,automatic,10,9906
+DRV162,37,Nurse,AL4,0,3,0,medium,8792,commute,CAR162,0.3224,Tesla,Model S,2021,0.0,electric,manual,16,13809
+DRV163,44,Teacher,AL8,0,0,0,medium,8520,commute,CAR163,0.2558,Toyota,Corolla,2020,1.8,diesel,manual,16,7388
+DRV164,33,IT Manager,RG5,0,3,0,low,17191,commute,CAR164,0.4223,Honda,Accord,2022,2.0,diesel,manual,22,10291
+DRV165,33,Scientist,GU5,0,0,0,medium,12949,commute,CAR165,0.1323,Nissan,Micra,2014,1.0,petrol,manual,6,2851
+DRV166,45,Customer Service,S20,0,0,0,high,12129,commute,CAR166,0.2029,Nissan,Qashqai,2022,1.3,hybrid,automatic,8,9257
+DRV167,34,Construction Worker,S18,0,0,0,medium,13120,commute,CAR167,0.3367,Tesla,Model Y,2024,0.0,electric,manual,18,21519
+DRV168,47,Fast Food Worker,S6,0,1,0,low,12866,commute,CAR168,0.5183,Honda,Civic,2022,1.5,petrol,automatic,11,8849
+DRV169,27,Graphic Designer,S14,0,0,1,low,19210,commercial,CAR169,0.3558,Nissan,Micra,2016,1.0,electric,automatic,8,4577
+DRV170,43,Delivery Driver,RG1,1,2,0,medium,5893,social,CAR170,0.4275,Toyota,Yaris,2022,1.0,petrol,manual,3,8491
+DRV171,34,Delivery Driver,S20,0,3,1,low,12543,commute,CAR171,0.5199,Nissan,Qashqai,2011,1.3,hybrid,manual,11,1654
+DRV172,36,Taxi Driver,S16,0,4,0,medium,24010,commercial,CAR172,0.6126,Volkswagen,Golf,2022,1.4,petrol,automatic,12,9956
+DRV173,49,Accountant,AL8,0,2,0,medium,14967,commute,CAR173,0.3482,Mercedes,C-Class,2015,2.0,hybrid,manual,30,5714
+DRV174,28,Software Developer,S11,0,10,0,medium,8593,social,CAR174,0.6514,Tesla,Model S,2008,0.0,electric,manual,19,2387
+DRV175,36,Taxi Driver,S9,0,3,0,medium,8657,social,CAR175,0.5463,Volkswagen,Passat,2023,2.0,electric,manual,23,10620
+DRV176,43,Engineer,GU1,0,0,1,low,12888,commute,CAR176,0.3903,BMW,5 Series,2024,3.0,electric,manual,42,30109
+DRV177,43,Software Developer,S4,0,0,1,medium,13752,commute,CAR177,0.2717,Honda,Jazz,2024,1.3,hybrid,automatic,10,15129
+DRV178,38,Software Developer,S4,0,0,0,low,5942,social,CAR178,0.3766,Mercedes,C-Class,2017,2.0,hybrid,automatic,27,9026
+DRV179,54,Delivery Driver,S8,0,1,0,low,9882,commute,CAR179,0.5525,Volkswagen,Passat,2015,2.0,petrol,automatic,23,3917
+DRV180,22,Scientist,S8,0,1,1,medium,6798,social,CAR180,0.5284,Toyota,Corolla,2022,1.8,electric,automatic,14,8868
+DRV181,29,Delivery Driver,GU1,0,4,0,low,17631,commute,CAR181,0.5369,Ford,Fiesta,2022,1.1,electric,automatic,4,9266
+DRV182,32,IT Manager,RG2,0,0,0,low,7960,social,CAR182,0.1962,Audi,A1,2019,1.0,diesel,automatic,12,10175
+DRV183,48,Teacher,RG9,0,2,1,high,18099,commute,CAR183,0.4484,BMW,3 Series,2017,2.0,hybrid,automatic,30,7927
+DRV184,34,Customer Service,RG4,1,5,0,medium,8784,social,CAR184,0.506,Ford,Fiesta,2011,1.1,diesel,manual,4,2287
+DRV185,36,Taxi Driver,RG8,0,0,0,low,6099,social,CAR185,0.3193,Nissan,Leaf,2012,0.0,electric,automatic,13,2232
+DRV186,38,Warehouse Worker,S8,0,1,1,low,15480,commute,CAR186,0.4377,Volkswagen,Polo,2011,1.0,diesel,automatic,9,2473
+DRV187,30,Customer Service,S20,0,0,1,medium,4826,social,CAR187,0.2111,Nissan,Qashqai,2010,1.3,electric,automatic,7,1500
+DRV188,38,Delivery Driver,RG8,0,0,0,high,5331,social,CAR188,0.2861,Ford,Mustang,2022,2.3,hybrid,manual,22,9989
+DRV189,52,Software Developer,AL7,0,0,0,high,11812,commute,CAR189,0.1583,Nissan,Qashqai,2021,1.3,diesel,automatic,12,9275
+DRV190,38,Nurse,S16,0,4,0,medium,13358,commute,CAR190,0.4819,Tesla,Model 3,2024,0.0,electric,automatic,20,22568
+DRV191,42,IT Manager,S20,0,3,1,medium,8759,commute,CAR191,0.404,Audi,A3,2024,1.6,hybrid,automatic,24,24968
+DRV192,23,Accountant,RG1,1,3,0,medium,15921,commercial,CAR192,0.8219,Audi,A4,2010,2.0,hybrid,automatic,31,3708
+DRV193,29,Construction Worker,RG3,0,1,0,high,12697,commute,CAR193,0.5358,Mercedes,E-Class,2022,3.0,hybrid,automatic,41,20478
+DRV194,42,Graphic Designer,S3,0,0,0,medium,10162,commute,CAR194,0.2967,Toyota,Corolla,2023,1.8,petrol,manual,14,12816
+DRV195,37,Taxi Driver,M8,0,1,0,low,11632,commute,CAR195,0.5748,Honda,Civic,2011,1.5,diesel,manual,8,1500
+DRV196,53,Taxi Driver,S7,0,8,0,low,7786,commute,CAR196,0.8098,Nissan,Leaf,2018,0.0,electric,automatic,14,4612
+DRV197,28,Fast Food Worker,RG4,0,2,1,high,16097,commute,CAR197,0.3781,Tesla,Model 3,2009,0.0,electric,manual,17,3021
+DRV198,40,Taxi Driver,S14,0,0,0,high,10664,commute,CAR198,0.3053,BMW,1 Series,2019,1.5,diesel,automatic,15,11931
+DRV199,30,Software Developer,AL7,0,0,0,high,5970,social,CAR199,0.1326,BMW,1 Series,2024,1.5,petrol,manual,16,24343
+DRV200,28,Warehouse Worker,S18,0,0,0,high,18100,commercial,CAR200,0.3427,Ford,Focus,2023,1.5,petrol,automatic,12,10884
