@@ -108,7 +108,7 @@ ORCHESTRATOR AGENT
 
 ## AWS Services
 
-- AWS Bedrock
+- AWS Bedrock (Anthropic Claude sonnet 4.5 and haiku 4.5,  and Amazon Titan Text Embeddings models)
 - AWS Lambda
 - Bedrock Knowledge Base
 - Bedrock AgentCore Memory
@@ -226,12 +226,6 @@ DELETE /sessions/{session_id}
 - ML-based adaptive risk models
 - Human-in-the-loop workflows
 - Multi-language support
-
-### Phase 4: Experience
-- Mobile applications (iOS/Android)
-- WhatsApp integration
-- Voice interface with Amazon Connect
-
 ---
 
 ## License
