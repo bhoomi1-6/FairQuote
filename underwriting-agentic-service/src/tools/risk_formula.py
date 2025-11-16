@@ -1,14 +1,18 @@
 # risk_rule_engine.py
 
 from typing import Dict, Any, Optional
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 try:
-    # Optional: if using STRANDS, uncomment the next line and the @tool wrapper below
     from strands import tool  # type: ignore
     _HAS_STRANDS = True
 except Exception:
     _HAS_STRANDS = False
+
+
+# ============================
+# 1. RISK WEIGHTS
+# ============================
 
 @dataclass
 class RiskWeights:
@@ -35,205 +39,164 @@ class RiskWeights:
             "usage": self.usage,
         }
 
-def _age_factor(age: int) -> float:
-    """Return factor [0..1] for age (higher => more risky)."""
-    if age < 21:
-        return 1.0
-    if 21 <= age <= 24:
-        return 0.75
-    if 25 <= age <= 55:
-        return 0.15
-    if 56 <= age <= 70:
-        return 0.35
-    return 0.60  # 71+
 
-def _occupation_factor(occupation: str) -> float:
-    o = (occupation or "").lower()
-    high = ["delivery", "taxi", "driver", "construction", "bartend", "fast food"]
-    med = ["nurse", "teacher", "customer service", "warehouse", "graphic"]
-    low = ["software", "engineer", "accountant", "it manager", "scientist"]
-    if any(h in o for h in high):
-        return 0.9
-    if any(m in o for m in med):
-        return 0.4
-    if any(l in o for l in low):
-        return 0.1
+# ============================
+# 2. FACTOR FUNCTIONS
+# ============================
+
+def _age_factor(age: int) -> float:
+    if age < 21: return 1.0
+    if 21 <= age <= 24: return 0.75
+    if 25 <= age <= 55: return 0.15
+    if 56 <= age <= 70: return 0.35
+    return 0.60
+
+def _occupation_factor(job: str) -> float:
+    j = (job or "").lower()
+    high = ["delivery", "taxi", "driver", "construction", "bartend"]
+    med = ["nurse", "teacher", "customer service", "warehouse"]
+    low = ["software", "engineer", "accountant", "it manager"]
+
+    if any(h in j for h in high): return 0.9
+    if any(m in j for m in med): return 0.4
+    if any(l in j for l in low): return 0.1
     return 0.35
 
-def _postcode_factor(postcode: str) -> float:
-    p = (postcode or "").upper()
-    if p.startswith(("M", "B")):
-        return 0.9
-    if p.startswith("S"):
-        return 0.6
-    if p.startswith(("RG", "GU", "AL")):
-        return 0.15
+def _postcode_factor(pc: str) -> float:
+    p = (pc or "").upper()
+    if p.startswith(("M", "B")): return 0.9
+    if p.startswith("S"): return 0.6
+    if p.startswith(("RG", "GU", "AL")): return 0.15
     return 0.4
 
-def _claims_factor(claims: int) -> float:
-    if claims <= 0:
-        return 0.0
-    if claims == 1:
-        return 0.35
-    if claims == 2:
-        return 0.6
-    return 0.85  # 3+
-
-def _points_factor(points: int) -> float:
-    if points <= 0:
-        return 0.0
-    if 1 <= points <= 3:
-        return 0.3
-    if 4 <= points <= 6:
-        return 0.6
-    return 0.95
-
-def _mileage_factor(miles: int) -> float:
-    if miles < 8000:
-        return 0.05
-    if miles <= 15000:
-        return 0.15
-    return 0.35
-
-def _vehicle_grade_factor(insurance_grade: float) -> float:
-    if insurance_grade < 10:
-        return 0.05
-    if insurance_grade <= 20:
-        return 0.25
-    if insurance_grade <= 30:
-        return 0.55
+def _claims_factor(c: int) -> float:
+    if c == 0: return 0.0
+    if c == 1: return 0.35
+    if c == 2: return 0.6
     return 0.85
 
-def _income_factor(income: str) -> float:
-    inc = (income or "").lower()
-    if inc == "low":
-        return 0.25
-    if inc == "medium":
-        return 0.10
-    if inc == "high":
-        return 0.0
+def _points_factor(p: int) -> float:
+    if p == 0: return 0.0
+    if 1 <= p <= 3: return 0.3
+    if 4 <= p <= 6: return 0.6
+    return 0.95
+
+def _mileage_factor(m: int) -> float:
+    if m < 8000: return 0.05
+    if m <= 15000: return 0.15
+    return 0.35
+
+def _vehicle_grade_factor(g: float) -> float:
+    if g < 10: return 0.05
+    if g <= 20: return 0.25
+    if g <= 30: return 0.55
+    return 0.85
+
+def _income_factor(inc: str) -> float:
+    i = (inc or "").lower()
+    if i == "low": return 0.25
+    if i == "medium": return 0.10
+    if i == "high": return 0.0
     return 0.12
 
-def _usage_factor(usage: str) -> float:
-    u = (usage or "").lower()
-    if u == "commercial":
-        return 0.4
-    if u == "commute":
-        return 0.15
-    return 0.05  # social / other
+def _usage_factor(u: str) -> float:
+    use = (u or "").lower()
+    if use == "commercial": return 0.4
+    if use == "commute": return 0.15
+    return 0.05  # social
 
-def compute_rule_based_risk(user: Dict[str, Any], weights: Optional[Dict[str, float]] = None) -> Dict[str, Any]:
-    """
-    Compute a deterministic risk score [0.0 - 1.0] using rule-based factors.
-    Returns a dict:
-      {
-        "risk_score": float,
-        "raw_score": float,
-        "normalized_score": float,
-        "breakdown": { factor: {value, weight, contrib}, ...},
-        "weights": {...}
-      }
-    user: dict containing fields:
-      - age (int)
-      - occupation (str)
-      - postcode (str)
-      - claim_history (int)
-      - driving_history_points (int)
-      - annual_mileage (int)
-      - insurance_grade (int or float)
-      - income (str)
-      - car_usage (str)
-    weights: optional dict override for factor weights (keys as in RiskWeights)
-    """
-    # default weights
+
+# ============================
+# 3. VEHICLE BASE PREMIUM
+# ============================
+
+def compute_base_premium(vehicle: Dict[str, Any]) -> float:
+    grade = float(vehicle.get("insurance_grade", 15))
+    year = int(vehicle.get("year", 2020))
+    engine = float(vehicle.get("engine_size", 1.4))
+
+    base = 300.0
+
+    base += grade * 12
+
+    if engine < 1.2: base += 20
+    elif engine < 1.6: base += 40
+    elif engine < 2.0: base += 70
+    else: base += 120
+
+    age = 2025 - year
+    if age > 12: base += 40
+    elif age < 3: base += 30
+
+    return round(base, 2)
+
+
+# ============================
+# 4. RISK ENGINE
+# ============================
+
+def compute_rule_based_risk(user: Dict[str, Any], weights: Optional[Dict[str, float]] = None):
+
     default = RiskWeights()
-    if weights is None:
-        w = default.as_dict()
-    else:
-        # merge overrides
-        w = default.as_dict()
-        for k, v in (weights or {}).items():
-            if k in w:
-                w[k] = float(v)
+    w = default.as_dict() if weights is None else {**default.as_dict(), **weights}
 
-    # pull inputs with safe defaults
-    age = int(user.get("age", 35))
-    occupation = user.get("occupation", "")
-    postcode = user.get("postcode", "")
-    claims = int(user.get("claim_history", 0))
-    points = int(user.get("driving_history_points", 0))
-    miles = int(user.get("annual_mileage", 10000))
-    insurance_grade = float(user.get("insurance_grade", user.get("insurance_grade", 15)))
-    income = user.get("income", "medium")
-    usage = user.get("car_usage", "commute")
-
-    # compute factor values (0..1 scale roughly)
     factors = {
-        "age": _age_factor(age),
-        "occupation": _occupation_factor(occupation),
-        "postcode": _postcode_factor(postcode),
-        "claims": _claims_factor(claims),
-        "points": _points_factor(points),
-        "mileage": _mileage_factor(miles),
-        "vehicle_grade": _vehicle_grade_factor(insurance_grade),
-        "income": _income_factor(income),
-        "usage": _usage_factor(usage),
+        "age": _age_factor(int(user.get("age", 35))),
+        "occupation": _occupation_factor(user.get("occupation", "")),
+        "postcode": _postcode_factor(user.get("postcode", "")),
+        "claims": _claims_factor(int(user.get("claim_history", 0))),
+        "points": _points_factor(int(user.get("driving_history_points", 0))),
+        "mileage": _mileage_factor(int(user.get("annual_mileage", 10000))),
+        "vehicle_grade": _vehicle_grade_factor(float(user.get("insurance_grade", 15))),
+        "income": _income_factor(user.get("income", "medium")),
+        "usage": _usage_factor(user.get("car_usage", "commute")),
     }
 
-    # breakdown contributions
     breakdown = {}
-    total_weight = sum(w.values())
     raw_score = 0.0
-    for k, factor_val in factors.items():
-        weight = w.get(k, 0.0)
-        contrib = weight * factor_val
-        breakdown[k] = {"value": round(float(factor_val), 4), "weight": round(float(weight), 4), "contrib": round(float(contrib), 6)}
+    total_weight = sum(w.values())
+
+    for k, val in factors.items():
+        contrib = w[k] * val
         raw_score += contrib
+        breakdown[k] = {
+            "value": round(val, 4),
+            "weight": round(w[k], 4),
+            "contrib": round(contrib, 6)
+        }
 
-    # normalize to 0..1 by dividing by sum of weights*max_factor (max_factor here is 1.0)
-    normalized = raw_score / total_weight if total_weight > 0 else 0.0
-
-    # small random jitter could be added if desired — commented out for determinism
-    # import random
-    # normalized = normalized + random.uniform(-0.01, 0.01)
-
-    # clamp to [0,1]
-    risk_score = max(0.0, min(1.0, float(normalized)))
+    normalized = raw_score / total_weight
+    risk_score = max(0.0, min(1.0, normalized))
 
     return {
         "risk_score": round(risk_score, 4),
         "raw_score": round(raw_score, 6),
         "normalized_score": round(normalized, 6),
         "breakdown": breakdown,
-        "weights": {k: round(v, 4) for k, v in w.items()}
+        "weights": w,
     }
 
 
-# Optional STRANDS tool wrapper — uncomment decorator if you have strands available
+# ============================
+# 5. RISK ENGINE + BASE PREMIUM
+# ============================
+
+def compute_rule_based_risk_with_base(user: Dict[str, Any], vehicle: Dict[str, Any]):
+    risk = compute_rule_based_risk(user)
+    base = compute_base_premium(vehicle)
+
+    risk["base_premium"] = base
+    return risk
+
+
+# ============================
+# 6. STRANDS TOOL
+# ============================
+
 if _HAS_STRANDS:
     @tool(name="risk_rule_engine")
-    def risk_rule_engine_tool(user: Dict[str, Any], weights: Optional[Dict[str, float]] = None) -> Dict[str, Any]:
-        return compute_rule_based_risk(user, weights)
+    def risk_rule_engine_tool(user: Dict[str, Any], vehicle: Dict[str, Any]):
+        return compute_rule_based_risk_with_base(user, vehicle)
 else:
-    # expose a callable alias for non-Strands use
-    def risk_rule_engine_tool(user: Dict[str, Any], weights: Optional[Dict[str, float]] = None) -> Dict[str, Any]:
-        return compute_rule_based_risk(user, weights)
-
-
-# # Example quick test function (not a full unit test)
-# def _example():
-#     user = {
-#         "age": 24,
-#         "occupation": "Delivery Driver",
-#         "postcode": "M12",
-#         "claim_history": 2,
-#         "driving_history_points": 6,
-#         "annual_mileage": 16000,
-#         "insurance_grade": 28,
-#         "income": "low",
-#         "car_usage": "commercial"
-#     }
-#     print(compute_rule_based_risk(user))
-
-# if __name__ == "__main__":
-#     _example()
+    def risk_rule_engine_tool(user: Dict[str, Any], vehicle: Dict[str, Any]):
+        return compute_rule_based_risk_with_base(user, vehicle)
