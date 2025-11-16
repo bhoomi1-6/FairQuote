@@ -7,3 +7,7 @@ python-dotenv>=1.0.0
 strands-agents
 strands-agents-tools
 boto3
+streamlit
+fastapi
+uvicorn
+bedrock-agentcore[strands-agents]
