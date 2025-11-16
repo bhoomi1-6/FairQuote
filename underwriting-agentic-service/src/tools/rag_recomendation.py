@@ -2,8 +2,8 @@ import os
 import boto3
 from strands import tool
 
-@tool(name="vehicle_insurance_rag")
-def vehicle_insurance_rag(query: str, customer_id: str) -> str:
+@tool(name="vehicle_insurance_recommendation")
+def vehicle_insurance_recommendation(query: str, customer_id: str) -> str:
     """
     Handles vehicle-related insurance queries using the unstructured knowledge base.
     

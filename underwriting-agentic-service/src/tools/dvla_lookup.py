@@ -1,30 +1,57 @@
 from strands import tool
-import requests
-from dotenv import load_dotenv
-load_dotenv()
+import boto3
+import json
 import os
+from dotenv import load_dotenv
 
-LAMBDA_URL = os.getenv("LAMBDA_URL")
-API_KEY = os.getenv("DVLA_API_KEY")   # Should be "test-api-key"
+# Load environment variables
+load_dotenv()
+
+LAMBDA_ARN = "arn:aws:lambda:us-east-1:029449502346:function:vehicle-lookup:1"
+
+AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_REGION     = "us-east-1"
+
+# Create AWS Lambda client
+lambda_client = boto3.client(
+    "lambda",
+    region_name=AWS_REGION,
+    aws_access_key_id=AWS_ACCESS_KEY,
+    aws_secret_access_key=AWS_SECRET_KEY,
+)
 
 @tool(name="dvla_lookup")
-def dvla_lookup(registration: str):
+async def dvla_lookup(registration: str):
     """
-    Calls the AWS Lambda vehicle lookup service and returns DVLA-style mock data.
+    Invokes the DVLA Lambda directly by ARN and returns vehicle data.
     """
+    registration = registration.strip().upper()
+
+    payload = {
+        "body": json.dumps({"registrationNumber": registration})
+    }
 
     try:
-        response = requests.get(
-            LAMBDA_URL,
-            params={"registrationNumber": registration},   # FIXED
-            headers={"x-api-key": API_KEY}                # REQUIRED
+        # Invoke Lambda
+        response = lambda_client.invoke(
+            FunctionName=LAMBDA_ARN,
+            InvocationType="RequestResponse",
+            Payload=json.dumps(payload)
         )
 
-        response.raise_for_status()
-        return response.json()
+        # Parse Lambda result
+        response_payload = response["Payload"].read()
+        parsed = json.loads(response_payload)
 
-    except requests.exceptions.HTTPError as http_err:
-        return {"error": f"HTTP error: {str(http_err)}", "details": response.text}
+        # Lambda returns {"statusCode": ..., "body": "...json..."}
+        if "body" in parsed:
+            try:
+                parsed["body"] = json.loads(parsed["body"])
+            except:
+                pass
+
+        return parsed
 
     except Exception as e:
         return {"error": str(e)}

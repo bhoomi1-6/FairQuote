@@ -5,74 +5,49 @@ with open("vehicles.json", "r") as f:
     vehicles_data = json.load(f)
 
 VEHICLES = {v["registration"].upper(): v for v in vehicles_data}
-API_KEY = "test-api-key"
-
 
 def lambda_handler(event, context):
-
-    # Support API Gateway + Lambda Function URLs
-    method = (
-        event.get("httpMethod") or
-        event.get("requestContext", {}).get("http", {}).get("method") or
-        ""
-    ).upper()
-
-    # Normalize headers
-    headers = {k.lower(): v for k, v in event.get("headers", {}).items()}
-    x_api_key = headers.get("x-api-key")
-
-    if x_api_key != API_KEY:
+    """
+    Vehicle lookup function for AgentCore Gateway
+    Expects: {"registrationNumber": "ABC123"}
+    Returns: Vehicle data or error
+    """
+    
+    # AgentCore Gateway passes parameters in 'body' as JSON string
+    try:
+        if isinstance(event.get('body'), str):
+            body = json.loads(event.get('body', '{}'))
+        else:
+            body = event.get('body', {})
+    except json.JSONDecodeError:
         return {
-            "statusCode": 401,
-            "headers": {"Content-Type": "application/json"},
-            "body": json.dumps({"detail": "Invalid API key"})
+            'statusCode': 400,
+            'body': json.dumps({'error': 'Invalid JSON in request body'})
         }
-
+    
     # Extract registration number
-    registration = None
-
-    if method == "GET":
-        registration = event.get("queryStringParameters", {}).get("registrationNumber")
-
-    elif method == "POST":
-        try:
-            body = json.loads(event.get("body", "{}"))
-            registration = body.get("registrationNumber")
-        except:
-            return {
-                "statusCode": 400,
-                "headers": {"Content-Type": "application/json"},
-                "body": json.dumps({"detail": "Invalid JSON"})
-            }
-
-    else:
-        return {
-            "statusCode": 405,
-            "headers": {"Content-Type": "application/json"},
-            "body": json.dumps({"detail": "Method not allowed"})
-        }
-
-    # Validate
+    registration = body.get('registrationNumber')
+    
     if not registration:
         return {
-            "statusCode": 400,
-            "headers": {"Content-Type": "application/json"},
-            "body": json.dumps({"detail": "registrationNumber is required"})
+            'statusCode': 400,
+            'body': json.dumps({'error': 'registrationNumber is required'})
         }
-
+    
+    # Lookup vehicle
     reg = registration.strip().upper()
     vehicle = VEHICLES.get(reg)
-
+    
     if not vehicle:
         return {
-            "statusCode": 404,
-            "headers": {"Content-Type": "application/json"},
-            "body": json.dumps({"detail": "Vehicle not found"})
+            'statusCode': 404,
+            'body': json.dumps({
+                'error': f'Vehicle not found for registration: {registration}'
+            })
         }
-
-    # Good response
+    
+    # Return vehicle data
     return {
-        "statusCode": 200,
-        "headers": {"Content-Type": "application/json"},
-        "body": json.dumps(vehicle)
+        'statusCode': 200,
+        'body': json.dumps(vehicle)
     }
