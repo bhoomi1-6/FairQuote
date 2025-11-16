@@ -7,7 +7,7 @@ class PricingAgent(Agent):
     name = "pricing_agent"
     system_prompt= "Computes risk score + premium; generates natural language explanation."
 
-    tools = ["risk_rule_engine_tool", "premium_calculator_tool", "rag_explainer"]
+    tools = ["risk_rule_engine_tool", "premium_calculator_tool", "vehicle_insurance_recommendation"]
 
     instructions = """
     You compute:
