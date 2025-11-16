@@ -9,8 +9,8 @@ from bedrock_agentcore.memory.integrations.strands.config import AgentCoreMemory
 
 # Import downstream agents
 from src.agents.intake_agent import IntakeAgent
-# from src.agents.pricing_agent import PricingAgent
-# from src.agents.policy_agent import PolicyAgent
+from src.agents.pricing_agent import PricingAgent
+from src.agents.policy_agent import PolicyAgent
 
 
 ORCHESTRATOR_SYSTEM_PROMPT = """
