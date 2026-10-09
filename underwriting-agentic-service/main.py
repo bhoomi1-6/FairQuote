@@ -189,7 +189,7 @@ async def chat_with_upload(
         }
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Agent error:" +e)
+        raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
     
 @app.get("/sessions/{session_id}/history")
 async def get_conversation_history(session_id: str):

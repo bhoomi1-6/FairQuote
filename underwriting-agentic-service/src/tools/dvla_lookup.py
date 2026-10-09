@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-LAMBDA_ARN = "arn:aws:lambda:us-east-1:029449502346:function:vehicle-lookup:1"
+LAMBDA_ARN = os.getenv("LAMBDA_ARN")
 
 AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")

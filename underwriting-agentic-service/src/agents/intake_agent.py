@@ -100,4 +100,11 @@ Looks like a 2017 Ford Fiesta 1.0L EcoBoost. Does that sound right?”
         """
         Simple IntakeAgent – no memory, no session manager.
         """
-        super().__init__(tools=[dvla_lookup], **kwargs)
+        super().__init__(
+            model=self.model,
+            name=self.name,
+            description=self.description,
+            system_prompt=self.system_prompt,
+            tools=self.tools,
+            **kwargs,
+        )

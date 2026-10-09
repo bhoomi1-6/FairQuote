@@ -23,7 +23,7 @@ class MASAPIClient:
     
     def __init__(self, base_url: str):
         self.base_url = base_url.rstrip('/')
-        self.timeout = 120
+        self.timeout = 1000
     
     def health_check(self) -> dict:
         try:
@@ -162,10 +162,10 @@ with st.expander("📄 Upload Document", expanded=False):
                     st.session_state.messages.append({"role": "assistant", "content": result["message"]})
                     for tc in result.get("tool_calls", []):
                         st.session_state.messages.append({"role": "tool", "content": f"**{tc['name']}**\n\n{tc['output']}"})
-                    st.experimental_rerun()
+                    st.rerun()
                 except Exception as e:
                     st.session_state.messages.append({"role": "error", "content": str(e)})
-                    st.experimental_rerun()
+                    st.rerun()
 
 # ----------------------------
 # CHAT INPUT
@@ -199,21 +199,21 @@ with st.sidebar:
     col1, col2 = st.columns(2)
     if col1.button("🔄 Reset"):
         reset_conversation()
-        st.experimental_rerun()
+        st.rerun()
     if col2.button("🗑️ Clear Chat"):
         st.session_state.messages = []
-        st.experimental_rerun()
+        st.rerun()
     
     st.divider()
     st.subheader("💡 Quick Actions")
     if st.button("📋 Get Quote"):
         st.session_state.messages.append({"role": "user", "content": "I'd like a quote"})
-        st.experimental_rerun()
+        st.rerun()
     if st.button("📄 Upload License"):
         st.info("Use the upload section above")
     if st.button("🚗 Vehicle Info"):
         st.session_state.messages.append({"role": "user", "content": "Provide vehicle information"})
-        st.experimental_rerun()
+        st.rerun()
     
     st.divider()
     with st.expander("❓ Help & Tips"):

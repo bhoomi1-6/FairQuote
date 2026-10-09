@@ -18,19 +18,19 @@ def rag_clause_retrieval(query: str, policy_id: str = None) -> str:
         A formatted string containing the top retrieved clauses.
     """
 
-    region = os.environ.get("AWS_DEFAULT_REGION", "us-west-2")
-    kb_id = os.environ.get("POLICY_KNOWLEDGE_BASE_ID")
+    region = os.environ.get("AWS_REGION", "us-east-1")
+    kb_id = os.environ.get("POLICY_KNOWLEDGE_BASE_ID") or os.environ.get("KNOWLEDGE_BASE_ID")
     client = boto3.client("bedrock-agent-runtime", region_name=region)
 
     retrieval_config = {
-        "vectorSearchConfiguration": {
+        "managedSearchConfiguration": {
             "numberOfResults": 5
         }
     }
 
     # Add optional policy-level filter
     if policy_id:
-        retrieval_config["vectorSearchConfiguration"]["filter"] = {
+        retrieval_config["managedSearchConfiguration"]["filter"] = {
             "equals": {"key": "policy_id", "value": policy_id}
         }
 

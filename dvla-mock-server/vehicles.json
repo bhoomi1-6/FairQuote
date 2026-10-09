@@ -1,0 +1,61 @@
+[
+    {"registration":"AA01AAA","make":"Toyota","model":"Yaris","year":2018,"insuranceGrade":6},
+    {"registration":"AA02AAA","make":"Toyota","model":"Corolla","year":2020,"insuranceGrade":7},
+    {"registration":"AA03AAA","make":"Toyota","model":"Camry","year":2021,"insuranceGrade":10},
+    {"registration":"AA04AAA","make":"Honda","model":"Civic","year":2019,"insuranceGrade":9},
+    {"registration":"AA05AAA","make":"Honda","model":"Accord","year":2017,"insuranceGrade":11},
+    {"registration":"AA06AAA","make":"Honda","model":"Jazz","year":2022,"insuranceGrade":5},
+    {"registration":"AA07AAA","make":"Ford","model":"Fiesta","year":2016,"insuranceGrade":8},
+    {"registration":"AA08AAA","make":"Ford","model":"Focus","year":2020,"insuranceGrade":12},
+    {"registration":"AA09AAA","make":"Ford","model":"Mustang","year":2021,"insuranceGrade":35},
+    {"registration":"AA10AAA","make":"Ford","model":"Kuga","year":2022,"insuranceGrade":15},
+    
+    {"registration":"AA11AAA","make":"BMW","model":"1 Series","year":2019,"insuranceGrade":18},
+    {"registration":"AA12AAA","make":"BMW","model":"3 Series","year":2018,"insuranceGrade":22},
+    {"registration":"AA13AAA","make":"BMW","model":"5 Series","year":2021,"insuranceGrade":27},
+    {"registration":"AA14AAA","make":"BMW","model":"X3","year":2020,"insuranceGrade":25},
+    {"registration":"AA15AAA","make":"BMW","model":"M4","year":2022,"insuranceGrade":45},
+    
+    {"registration":"AA16AAA","make":"Mercedes","model":"A-Class","year":2021,"insuranceGrade":17},
+    {"registration":"AA17AAA","make":"Mercedes","model":"C-Class","year":2020,"insuranceGrade":23},
+    {"registration":"AA18AAA","make":"Mercedes","model":"E-Class","year":2021,"insuranceGrade":28},
+    {"registration":"AA19AAA","make":"Mercedes","model":"GLE","year":2022,"insuranceGrade":32},
+    {"registration":"AA20AAA","make":"Mercedes","model":"AMG GT","year":2020,"insuranceGrade":48},
+  
+    {"registration":"AA21AAA","make":"Audi","model":"A1","year":2019,"insuranceGrade":14},
+    {"registration":"AA22AAA","make":"Audi","model":"A3","year":2021,"insuranceGrade":18},
+    {"registration":"AA23AAA","make":"Audi","model":"A4","year":2020,"insuranceGrade":21},
+    {"registration":"AA24AAA","make":"Audi","model":"Q5","year":2022,"insuranceGrade":26},
+    {"registration":"AA25AAA","make":"Audi","model":"RS7","year":2021,"insuranceGrade":47},
+  
+    {"registration":"AA26AAA","make":"Tesla","model":"Model 3","year":2023,"insuranceGrade":20},
+    {"registration":"AA27AAA","make":"Tesla","model":"Model Y","year":2022,"insuranceGrade":22},
+    {"registration":"AA28AAA","make":"Tesla","model":"Model S","year":2020,"insuranceGrade":30},
+    {"registration":"AA29AAA","make":"Tesla","model":"Model X","year":2021,"insuranceGrade":33},
+    {"registration":"AA30AAA","make":"Tesla","model":"Cybertruck","year":2024,"insuranceGrade":40},
+  
+    {"registration":"AA31AAA","make":"Nissan","model":"Micra","year":2017,"insuranceGrade":7},
+    {"registration":"AA32AAA","make":"Nissan","model":"Qashqai","year":2019,"insuranceGrade":13},
+    {"registration":"AA33AAA","make":"Nissan","model":"Leaf","year":2023,"insuranceGrade":10},
+    {"registration":"AA34AAA","make":"Nissan","model":"Juke","year":2020,"insuranceGrade":11},
+    {"registration":"AA35AAA","make":"Nissan","model":"GT-R","year":2021,"insuranceGrade":50},
+  
+    {"registration":"AA36AAA","make":"Volkswagen","model":"Polo","year":2018,"insuranceGrade":8},
+    {"registration":"AA37AAA","make":"Volkswagen","model":"Golf","year":2021,"insuranceGrade":15},
+    {"registration":"AA38AAA","make":"Volkswagen","model":"Passat","year":2019,"insuranceGrade":16},
+    {"registration":"AA39AAA","make":"Volkswagen","model":"Tiguan","year":2022,"insuranceGrade":19},
+    {"registration":"AA40AAA","make":"Volkswagen","model":"Arteon","year":2021,"insuranceGrade":24},
+  
+    {"registration":"AA41AAA","make":"Hyundai","model":"i10","year":2022,"insuranceGrade":5},
+    {"registration":"AA42AAA","make":"Hyundai","model":"i20","year":2020,"insuranceGrade":7},
+    {"registration":"AA43AAA","make":"Hyundai","model":"Elantra","year":2019,"insuranceGrade":9},
+    {"registration":"AA44AAA","make":"Hyundai","model":"Tucson","year":2022,"insuranceGrade":14},
+    {"registration":"AA45AAA","make":"Hyundai","model":"Genesis G70","year":2021,"insuranceGrade":29},
+  
+    {"registration":"AA46AAA","make":"Kia","model":"Picanto","year":2021,"insuranceGrade":6},
+    {"registration":"AA47AAA","make":"Kia","model":"Rio","year":2019,"insuranceGrade":8},
+    {"registration":"AA48AAA","make":"Kia","model":"Sportage","year":2020,"insuranceGrade":14},
+    {"registration":"AA49AAA","make":"Kia","model":"Stinger","year":2021,"insuranceGrade":34},
+    {"registration":"AA50AAA","make":"Kia","model":"EV6","year":2023,"insuranceGrade":18}
+  ]
+  

@@ -143,7 +143,6 @@ AWS_ACCESS_KEY_ID=your_key
 AWS_SECRET_ACCESS_KEY=your_secret
 AWS_DEFAULT_REGION=us-east-1
 BEDROCK_MODEL_ID=anthropic.claude-3-haiku-20250101-v1:0
-LAMBDA_ARN=arn:aws:lambda:us-east-1:029449502346:function:vehicle-lookup:1
 POLICY_KNOWLEDGE_BASE_ID=your_kb_id
 MEM_ID=your_memory_id
 ```

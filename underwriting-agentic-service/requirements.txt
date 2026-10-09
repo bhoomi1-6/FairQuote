@@ -4,6 +4,7 @@ numpy>=1.24.0
 # dotenv for environment variables
 python-dotenv>=1.0.0
 
+dotenv
 strands-agents
 strands-agents-tools
 boto3
@@ -11,4 +12,4 @@ streamlit
 fastapi
 uvicorn
 bedrock-agentcore[strands-agents]
-risk_formula
+google-genai

@@ -1,5 +1,6 @@
 from strands import Agent
 from src.config.init_model import bedrock_model
+from src.tools.rag_policy_generation import rag_clause_retrieval
 
 class PolicyAgent(Agent):
     """
@@ -15,9 +16,17 @@ class PolicyAgent(Agent):
         "summaries for clarity and outputs Markdown ready for PDF conversion."
     )
 
-    tools = [
-        "rag_clause_retrieval"
-    ]
+    tools = [rag_clause_retrieval]
+
+    def __init__(self, **kwargs):
+        super().__init__(
+            model=self.model,
+            name=self.name,
+            description=self.description,
+            system_prompt=self.system_prompt,
+            tools=self.tools,
+            **kwargs,
+        )
 
     system_prompt = """
     You are an intelligent insurance policy assistant.

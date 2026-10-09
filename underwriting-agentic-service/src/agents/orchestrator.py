@@ -11,6 +11,7 @@ from bedrock_agentcore.memory.integrations.strands.config import AgentCoreMemory
 from src.agents.intake_agent import IntakeAgent
 from src.agents.pricing_agent import PricingAgent
 from src.agents.policy_agent import PolicyAgent
+from src.config.init_model import bedrock_model
 
 
 ORCHESTRATOR_SYSTEM_PROMPT = """
@@ -132,10 +133,14 @@ class OrchestratorAgent(Agent):
         )
 
         super().__init__(
+            model=bedrock_model,
             name="orchestrator_agent",
             system_prompt=ORCHESTRATOR_SYSTEM_PROMPT,
             session_manager=session_manager,
             tools=[
-                IntakeAgent            ],
+                IntakeAgent(),
+                PricingAgent(),
+                PolicyAgent()
+            ],
             **kwargs
         )
